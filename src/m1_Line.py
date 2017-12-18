@@ -534,13 +534,8 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
 
-        start_x = self.start.x + other_line.start.x
-        start_y = self.start.y + other_line.start.y
-        end_x = self.end.x + other_line.end.x
-        end_y = self.end.y + other_line.end.y
-
-        start = Point(start_x, start_y)
-        end = Point(end_x, end_y)
+        start = self.start.plus(other_line.start)
+        end = self.end.plus(other_line.end)
         return Line(start, end)
 
     def line_minus(self, other_line):
@@ -577,13 +572,8 @@ class Line(object):
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
 
-        start_x = self.start.x - other_line.start.x
-        start_y = self.start.y - other_line.start.y
-        end_x = self.end.x - other_line.end.x
-        end_y = self.end.y - other_line.end.y
-
-        start = Point(start_x, start_y)
-        end = Point(end_x, end_y)
+        start = self.start.minus(other_line.start)
+        end = self.end.minus(other_line.end)
         return Line(start, end)
 
     def midpoint(self):
@@ -612,6 +602,8 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # --------------------------------------------------------------
+
+
 
     def is_parallel(self, line2):
         """
