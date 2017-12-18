@@ -141,6 +141,11 @@ class CapitalT(object):
         #   Note: you will need to also implement attach_to before testing
         # --------------------------------------------------------------
 
+        corner_1 = ((0.5) * width)
+
+        self.h_rect = rg.Rectangle(corner_1, corner_2)
+        self.v_rect = rg.Rectangle(corner_3 ,corner_4)
+
     def attach_to(self, window):
         """
         What comes in:
