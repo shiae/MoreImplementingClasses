@@ -14,9 +14,9 @@ def main():
     #   Uncomment only 1 test at a time as you develop your code.
     # --------------------------------------------------------------
 
-    run_test_simple_t()
+    # run_test_simple_t()
     # run_test_set_colors()
-    # run_test_move_by()
+    run_test_move_by()
     # run_test_clone()
 
 
@@ -141,21 +141,21 @@ class CapitalT(object):
         #   Note: you will need to also implement attach_to before testing
         # --------------------------------------------------------------
 
-        corner_1x = intersection_center.x - (0.5 * width)
-        corner_1y = intersection_center.y - (0.5 * letter_thickness)
-        self.corner_1 = rg.Point(corner_1x, corner_1y)
+        self.corner_1x = intersection_center.x - (0.5 * width)
+        self.corner_1y = intersection_center.y - (0.5 * letter_thickness)
+        self.corner_1 = rg.Point(self.corner_1x, self.corner_1y)
 
-        corner_2x = intersection_center.x + (0.5 * width)
-        corner_2y = intersection_center.y + (0.5 * letter_thickness)
-        self.corner_2 = rg.Point(corner_2x, corner_2y)
+        self.corner_2x = intersection_center.x + (0.5 * width)
+        self.corner_2y = intersection_center.y + (0.5 * letter_thickness)
+        self.corner_2 = rg.Point(self.corner_2x, self.corner_2y)
 
-        corner_3x = intersection_center.x - (0.5 * letter_thickness)
-        corner_3y = intersection_center.y - (0.5 * letter_thickness)
-        self.corner_3 = rg.Point(corner_3x, corner_3y)
+        self.corner_3x = intersection_center.x - (0.5 * letter_thickness)
+        self.corner_3y = intersection_center.y - (0.5 * letter_thickness)
+        self.corner_3 = rg.Point(self.corner_3x, self.corner_3y)
 
-        corner_4x = intersection_center.x + (0.5 * letter_thickness)
-        corner_4y = intersection_center.y - (0.5 * letter_thickness) + height
-        self.corner_4 = rg.Point(corner_4x, corner_4y)
+        self.corner_4x = intersection_center.x + (0.5 * letter_thickness)
+        self.corner_4y = intersection_center.y - (0.5 * letter_thickness) + height
+        self.corner_4 = rg.Point(self.corner_4x, self.corner_4y)
 
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
@@ -179,7 +179,7 @@ class CapitalT(object):
           :type window: rg.RoseWindow
         """
         # --------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   READ the above specification, including the Example.
         #   Implement and test this method by looking at the console and
         #     the graphics window (compare it to simple_t.pdf)
@@ -210,7 +210,7 @@ class CapitalT(object):
           :type outline_color: str
         """
         # --------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   READ the above specification, including the Example.
         #   Implement and test this method by uncommenting the appropriate
         #     run_test method in main. Compare the graphics window to
@@ -254,25 +254,16 @@ class CapitalT(object):
         #     that the T moves through, but there is only 1 T at any moment.
         # --------------------------------------------------------------
 
+        self.corner_1 = rg.Point(self.corner_1x + dx, self.corner_1y + dy)
 
-        # corner_1x = intersection_center.y - (0.5 * width)
-        # corner_1y = intersection_center.y - (0.5 * letter_thickness)
-        # self.corner_1 = (corner_1x, corner_1y)
-        #
-        # corner_2x = intersection_center.x + (0.5 * width)
-        # corner_2y = intersection_center.y + (0.5 * letter_thickness)
-        # self.corner_2 = (corner_2x, corner_2y)
-        #
-        # corner_3x = intersection_center.x - (0.5 * letter_thickness)
-        # corner_3y = intersection_center.y - (0.5 * letter_thickness)
-        # self.corner_3 = (corner_3x, corner_3y)
-        #
-        # corner_4x = intersection_center.x + (0.5 * width)
-        # corner_4y = intersection_center.y - (0.5 * width) + height
-        # self.corner_4 = (corner_4x, corner_4y)
-        #
-        # self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
-        # self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
+        self.corner_2 = rg.Point(self.corner_2x + dx, self.corner_2y + dy)
+
+        self.corner_3 = rg.Point(self.corner_3x + dx, self.corner_3y + dy)
+
+        self.corner_4 = rg.Point(self.corner_4x + dx, self.corner_4y + dy)
+
+        self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
+        self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
     def clone(self):
         """
