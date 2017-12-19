@@ -158,8 +158,7 @@ class CapitalT(object):
         corner_4 = (corner_4x, corner_4y)
 
         self.h_rect = rg.Rectangle(corner_1, corner_2)
-        self.v_rect = rg.Rectangle(corner_3 ,corner_4)
-
+        self.v_rect = rg.Rectangle(corner_3,corner_4)
 
     def attach_to(self, window):
         """
@@ -185,6 +184,10 @@ class CapitalT(object):
         #   Implement and test this method by looking at the console and
         #     the graphics window (compare it to simple_t.pdf)
         # --------------------------------------------------------------
+
+        self.v_rect.attach_to(window)
+        self.h_rect.attach_to(window)
+        window.render()
 
     def set_colors(self, fill_color, outline_color):
         """
