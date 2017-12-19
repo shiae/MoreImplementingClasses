@@ -254,16 +254,16 @@ class CapitalT(object):
         #     that the T moves through, but there is only 1 T at any moment.
         # --------------------------------------------------------------
 
-        self.corner_1 = rg.Point(self.corner_1x + dx, self.corner_1y + dy)
+        corner_1 = rg.Point(self.corner_1x + dx, self.corner_1y + dy)
 
-        self.corner_2 = rg.Point(self.corner_2x + dx, self.corner_2y + dy)
+        corner_2 = rg.Point(self.corner_2x + dx, self.corner_2y + dy)
 
-        self.corner_3 = rg.Point(self.corner_3x + dx, self.corner_3y + dy)
+        corner_3 = rg.Point(self.corner_3x + dx, self.corner_3y + dy)
 
-        self.corner_4 = rg.Point(self.corner_4x + dx, self.corner_4y + dy)
+        corner_4 = rg.Point(self.corner_4x + dx, self.corner_4y + dy)
 
-        self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
-        self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
+        self.h_rect = rg.Rectangle(corner_1, corner_2)
+        self.v_rect = rg.Rectangle(corner_3, corner_4)
 
     def clone(self):
         """
