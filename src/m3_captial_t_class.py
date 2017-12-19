@@ -135,27 +135,27 @@ class CapitalT(object):
           :type letter_thickness:   int
         """
         # --------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   READ the above specification, including the Example.
         #   Implement this method
         #   Note: you will need to also implement attach_to before testing
         # --------------------------------------------------------------
 
-        corner_1x = intersection_center.y - (0.5 * width)
+        corner_1x = intersection_center.x - (0.5 * width)
         corner_1y = intersection_center.y - (0.5 * letter_thickness)
-        self.corner_1 = (corner_1x, corner_1y)
+        self.corner_1 = rg.Point(corner_1x, corner_1y)
 
         corner_2x = intersection_center.x + (0.5 * width)
         corner_2y = intersection_center.y + (0.5 * letter_thickness)
-        self.corner_2 = (corner_2x, corner_2y)
+        self.corner_2 = rg.Point(corner_2x, corner_2y)
 
         corner_3x = intersection_center.x - (0.5 * letter_thickness)
         corner_3y = intersection_center.y - (0.5 * letter_thickness)
-        self.corner_3 = (corner_3x, corner_3y)
+        self.corner_3 = rg.Point(corner_3x, corner_3y)
 
-        corner_4x = intersection_center.x + (0.5 * width)
-        corner_4y = intersection_center.y - (0.5 * width) + height
-        self.corner_4 = (corner_4x, corner_4y)
+        corner_4x = intersection_center.x + (0.5 * letter_thickness)
+        corner_4y = intersection_center.y - (0.5 * letter_thickness) + height
+        self.corner_4 = rg.Point(corner_4x, corner_4y)
 
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
@@ -253,6 +253,26 @@ class CapitalT(object):
         #     move_by.pdf. Note: the pdf shows the different locations
         #     that the T moves through, but there is only 1 T at any moment.
         # --------------------------------------------------------------
+
+
+        # corner_1x = intersection_center.y - (0.5 * width)
+        # corner_1y = intersection_center.y - (0.5 * letter_thickness)
+        # self.corner_1 = (corner_1x, corner_1y)
+        #
+        # corner_2x = intersection_center.x + (0.5 * width)
+        # corner_2y = intersection_center.y + (0.5 * letter_thickness)
+        # self.corner_2 = (corner_2x, corner_2y)
+        #
+        # corner_3x = intersection_center.x - (0.5 * letter_thickness)
+        # corner_3y = intersection_center.y - (0.5 * letter_thickness)
+        # self.corner_3 = (corner_3x, corner_3y)
+        #
+        # corner_4x = intersection_center.x + (0.5 * width)
+        # corner_4y = intersection_center.y - (0.5 * width) + height
+        # self.corner_4 = (corner_4x, corner_4y)
+        #
+        # self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
+        # self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
     def clone(self):
         """
