@@ -141,7 +141,21 @@ class CapitalT(object):
         #   Note: you will need to also implement attach_to before testing
         # --------------------------------------------------------------
 
-        corner_1 = ((0.5) * width)
+        corner_1x = intersection_center.y - (0.5 * width)
+        corner_1y = intersection_center.y - (0.5 * letter_thickness)
+        corner_1 = (corner_1x, corner_1y)
+
+        corner_2x = intersection_center.x + (0.5 * width)
+        corner_2y = intersection_center.y + (0.5 * letter_thickness)
+        corner_2 = (corner_2x, corner_2y)
+
+        corner_3x = intersection_center.x - (0.5 * letter_thickness)
+        corner_3y = intersection_center.y - (0.5 * letter_thickness)
+        corner_3 = (corner_3x, corner_3y)
+
+
+
+
 
         self.h_rect = rg.Rectangle(corner_1, corner_2)
         self.v_rect = rg.Rectangle(corner_3 ,corner_4)
