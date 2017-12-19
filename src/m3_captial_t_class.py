@@ -160,21 +160,17 @@ class CapitalT(object):
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
-        self.corner_1x
-        self.corner_1y
-        self.corner_1
+        self.corner_1xc = self.corner_1x
+        self.corner_1yc = self.corner_1y
 
-        self.corner_2x
-        self.corner_2y
-        self.corner_2
+        self.corner_2xc = self.corner_2x
+        self.corner_2yc = self.corner_2y
 
-        self.corner_3x
-        self.corner_3y
-        self.corner_3
+        self.corner_3xc = self.corner_3x
+        self.corner_3yc = self.corner_3y
 
-        self.corner_4x
-        self.corner_4y
-        self.corner_4
+        self.corner_4xc = self.corner_4x
+        self.corner_4yc = self.corner_4y
 
     def attach_to(self, window):
         """
@@ -270,13 +266,13 @@ class CapitalT(object):
         #     that the T moves through, but there is only 1 T at any moment.
         # --------------------------------------------------------------
 
-        corner_1 = rg.Point(self.corner_1x + dx, self.corner_1y + dy)
+        corner_1 = rg.Point(self.corner_1xc + dx, self.corner_1yc + dy)
 
-        corner_2 = rg.Point(self.corner_2x + dx, self.corner_2y + dy)
+        corner_2 = rg.Point(self.corner_2xc + dx, self.corner_2yc + dy)
 
-        corner_3 = rg.Point(self.corner_3x + dx, self.corner_3y + dy)
+        corner_3 = rg.Point(self.corner_3xc + dx, self.corner_3yc + dy)
 
-        corner_4 = rg.Point(self.corner_4x + dx, self.corner_4y + dy)
+        corner_4 = rg.Point(self.corner_4xc + dx, self.corner_4yc + dy)
 
         self.h_rect = rg.Rectangle(corner_1, corner_2)
         self.v_rect = rg.Rectangle(corner_3, corner_4)
