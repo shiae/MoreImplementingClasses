@@ -14,7 +14,7 @@ def main():
     #   Uncomment only 1 test at a time as you develop your code.
     # --------------------------------------------------------------
 
-    # run_test_simple_t()
+    run_test_simple_t()
     # run_test_set_colors()
     # run_test_move_by()
     # run_test_clone()
@@ -143,22 +143,22 @@ class CapitalT(object):
 
         corner_1x = intersection_center.y - (0.5 * width)
         corner_1y = intersection_center.y - (0.5 * letter_thickness)
-        corner_1 = (corner_1x, corner_1y)
+        self.corner_1 = (corner_1x, corner_1y)
 
         corner_2x = intersection_center.x + (0.5 * width)
         corner_2y = intersection_center.y + (0.5 * letter_thickness)
-        corner_2 = (corner_2x, corner_2y)
+        self.corner_2 = (corner_2x, corner_2y)
 
         corner_3x = intersection_center.x - (0.5 * letter_thickness)
         corner_3y = intersection_center.y - (0.5 * letter_thickness)
-        corner_3 = (corner_3x, corner_3y)
+        self.corner_3 = (corner_3x, corner_3y)
 
         corner_4x = intersection_center.x + (0.5 * width)
         corner_4y = intersection_center.y - (0.5 * width) + height
-        corner_4 = (corner_4x, corner_4y)
+        self.corner_4 = (corner_4x, corner_4y)
 
-        self.h_rect = rg.Rectangle(corner_1, corner_2)
-        self.v_rect = rg.Rectangle(corner_3,corner_4)
+        self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
+        self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
     def attach_to(self, window):
         """
@@ -216,6 +216,12 @@ class CapitalT(object):
         #     run_test method in main. Compare the graphics window to
         #     set_colors.pdf.
         # --------------------------------------------------------------
+
+        self.v_rect.fill_color = fill_color
+        self.v_rect.outline_color = outline_color
+
+        self.h_rect.fill_color = fill_color
+        self.h_rect.outline_color = outline_color
 
     def move_by(self, dx, dy):
         """
