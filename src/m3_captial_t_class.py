@@ -160,6 +160,22 @@ class CapitalT(object):
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
+        self.corner_1x
+        self.corner_1y
+        self.corner_1
+
+        self.corner_2x
+        self.corner_2y
+        self.corner_2
+
+        self.corner_3x
+        self.corner_3y
+        self.corner_3
+
+        self.corner_4x
+        self.corner_4y
+        self.corner_4
+
     def attach_to(self, window):
         """
         What comes in:
