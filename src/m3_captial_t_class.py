@@ -160,6 +160,11 @@ class CapitalT(object):
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
+        self.intersection_center = intersection_center
+        self.width = width
+        self.height = height
+        self.letter_thickness = letter_thickness
+
     def attach_to(self, window):
         """
         What comes in:
@@ -286,20 +291,23 @@ class CapitalT(object):
           :rtype: CapitalT
         """
         # --------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   READ the above specification, including the Example.
         #   Implement and test this method by uncommenting the appropriate
         #     run_test method in main. Compare the graphics window to
         #     clone.pdf.
         # --------------------------------------------------------------
 
-        clonev = rg.Rectangle(self.corner_1, self.corner_2)
-        clonev.fill_color = self.v_rect.fill_color
-        clonev.outline_color = self.v_rect.outline_color
+        clone = CapitalT(self.intersection_center, self.width, self.height,
+                        self.letter_thickness)
 
-        cloneh = rg.Rectangle(self.corner_2, self.corner_3)
-        cloneh.fill_color = self.h_rect.fill_color
-        cloneh.outline_color = self.h_rect.outline_color
+        clone.h_rect.fill_color = self.h_rect.fill_color
+        clone.h_rect.outline_color = self.h_rect.outline_color
+
+        clone.v_rect.fill_color = self.v_rect.fill_color
+        clone.v_rect.outline_color = self.v_rect.outline_color
+
+        return clone
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
