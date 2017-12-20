@@ -16,8 +16,8 @@ def main():
 
     # run_test_simple_t()
     # run_test_set_colors()
-    run_test_move_by()
-    # run_test_clone()
+    # run_test_move_by()
+    run_test_clone()
 
 
 def run_test_simple_t():
@@ -160,18 +160,6 @@ class CapitalT(object):
         self.h_rect = rg.Rectangle(self.corner_1, self.corner_2)
         self.v_rect = rg.Rectangle(self.corner_3, self.corner_4)
 
-        self.corner_1xc = self.corner_1x
-        self.corner_1yc = self.corner_1y
-
-        self.corner_2xc = self.corner_2x
-        self.corner_2yc = self.corner_2y
-
-        self.corner_3xc = self.corner_3x
-        self.corner_3yc = self.corner_3y
-
-        self.corner_4xc = self.corner_4x
-        self.corner_4yc = self.corner_4y
-
     def attach_to(self, window):
         """
         What comes in:
@@ -305,6 +293,13 @@ class CapitalT(object):
         #     clone.pdf.
         # --------------------------------------------------------------
 
+        clonev = rg.Rectangle(self.corner_1, self.corner_2)
+        clonev.fill_color = self.v_rect.fill_color
+        clonev.outline_color = self.v_rect.outline_color
+
+        cloneh = rg.Rectangle(self.corner_2, self.corner_3)
+        cloneh.fill_color = self.h_rect.fill_color
+        cloneh.outline_color = self.h_rect.outline_color
 
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
