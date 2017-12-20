@@ -258,7 +258,7 @@ class CapitalT(object):
           :type dy: int
         """
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   READ the above specification, including the Example.
         #   Implement and test this method by uncommenting the appropriate
         #     run_test method in main. Compare the graphics window to
@@ -267,9 +267,15 @@ class CapitalT(object):
         # --------------------------------------------------------------
 
         self.h_rect.corner_1.x += dx
+        self.h_rect.corner_1.y += dy
+
+        self.h_rect.corner_2.x += dx
         self.h_rect.corner_2.y += dy
 
         self.v_rect.corner_1.x += dx
+        self.v_rect.corner_1.y += dy
+
+        self.v_rect.corner_2.x += dx
         self.v_rect.corner_2.y += dy
 
     def clone(self):
